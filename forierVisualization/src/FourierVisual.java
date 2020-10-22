@@ -62,9 +62,7 @@ public class FourierVisual extends PApplet {
     
     boolean draw = false;
     
-    
-    
-    
+
     
     ArrayList<PVector> wavePoints = new ArrayList<PVector>();
     ArrayList<Float> signalY = new ArrayList<Float>();
@@ -132,6 +130,12 @@ public class FourierVisual extends PApplet {
 	    		time = 0;
 	    	}
 	    	
+	    	
+	    	if (mouseButton == LEFT){
+	    		mousePoints.clear();
+	    		draw = false;
+	    	}
+	    	
     	}else {
     		
     		if(mouseButton == LEFT) {
@@ -175,6 +179,8 @@ public class FourierVisual extends PApplet {
     		if(mouseButton == RIGHT) {
     			draw = true;
 
+    			signalX.clear();
+    			signalY.clear();
         		for(int i = 0; i < mousePoints.size(); i++){
         			PVector p = mousePoints.get(i);
         			signalX.add(p.x);
